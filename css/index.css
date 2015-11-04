@@ -153,13 +153,15 @@ img:hover.hover-color {
 	padding: 1px;
 	width: 414px;
 	border-color: grey;
+	height: 60%;
+	overflow-y: auto;
 }
 
 /*iphone screens*/
 @media(max-width:480px) {
 	.panel.facebook-panel {
 		width: 100%;
-		overflow: auto;
+		overflow-x: auto;
 	}
 }
 
