@@ -159,7 +159,7 @@ img:hover.hover-color {
 @media(max-width:480px) {
 	.panel.facebook-panel {
 		width: 100%;
-		overflow: auto;
+		overflow-x: auto;
 	}
 }
 
