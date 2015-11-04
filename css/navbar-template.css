@@ -1,5 +1,5 @@
 body {
-  /*background: url(../img/background.jpg) no-repeat center center fixed;*/
+  background: url(../img/background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -18,22 +18,43 @@ html {
 }
 
 body, h1, h2, h3, h4, h5, h6{
-  font-family: 'Roboto Condensed'
+  font-family: 'Open Sans', sans-serif;
+}
+
+.navbar-header{
+	background-color: transparent;
 }
 
 .topnav {
-  font-family: 'Roboto Condensed'
+  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-size: 14px;
-  background-color: black;
+  background-color: transparent;
+  border-color: transparent;
   text-transform: uppercase;
+}
+
+.topnav-background {
+  background-color: transparent;
+  
+  background: url(../img/header.png);
+
+  position: fixed;
+  height: 158px;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 1;
 }
 
 .nav>li{
 	text-align: right;
 }
 
-.navbar-default .navbar-nav li a { color: white; }
+.navbar-default .navbar-nav li a {
+	color: white;
+	text-shadow: 1px 1px 2px black;
+}
 .navbar-default .navbar-nav li a:hover { color: red; }
 .navbar-default .navbar-nav li a:focus { color: red; }
 
@@ -56,6 +77,28 @@ body, h1, h2, h3, h4, h5, h6{
 }
 
 footer {
-  padding: 20px 0;
-  background-color:rgba(0,0,0,0.8);
+  font-family: 'Open Sans', sans-serif;
+  padding: 20px 0 20px 0;
+  text-shadow: 1px 1px 2px black;
+  color: white;
+
+  position: fixed;
+  height: 50px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1030;
+}
+
+.footer-background {
+  background-color: transparent;
+  
+  background: url(../img/footer.png);
+
+  position: fixed;
+  height: 50px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
 }

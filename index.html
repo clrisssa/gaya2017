@@ -22,6 +22,10 @@
   <!-- Custom CSS -->
   <link href="./css/navbar-template.css" rel="stylesheet">
   <link href="./css/index.css" rel="stylesheet">
+  
+  <!-- google fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,300italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Vollkorn:400,700italic,700,400italic' rel='stylesheet' type='text/css'>
 
 </head>
 
@@ -39,6 +43,7 @@
 
 
 	<!-- Navigation -->
+	<div class="topnav-background"></div>
     <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
       <div class="container topnav">
 
@@ -50,7 +55,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a id="a-home" class="navbar-brand topnav" href="javascript:"><img height="100%" src="./img/gaya_logo_white.png" alt="logo"></img></a>
+          <a id="a-home" class="navbar-brand topnav" href="javascript:"><img height="100%" src="./img/gaya_logo.png" alt="logo"></img></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -90,18 +95,15 @@
 		<section class="content-section-a">
 
 		  <div class="container">
+		    <h2 class="section-heading">Synopsis:</h2>
 			<div class="row">
-
-			  <div class="col-md-6 col-xs-12">
-				<hr class="section-heading-spacer">
-				<div class="clearfix"></div>
-				<h2 class="section-heading">Synopsis:</h2>
+			  <div class="col-sm-6 col-xs-12">
 				<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</br>
 				Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
 			  </div>
 
-			  <div class="col-md-6 col-xs-12" style="display: none;">
-				
+			  <div class="col-sm-6 hidden-xs">
+				<img class="img-responsive" src="./img/gaya_logo.png" alt="untung">
 			  </div>
 			</div>
 		  </div>
@@ -113,14 +115,8 @@
 		<a name="cast"></a>
 		<section class="content-section-b">
 			<div class="container">
+				<h2 class="section-heading">Cast:</h2>
 				<div class="row">
-					<div class="col-md-12">
-						<hr class="section-heading-spacer">
-						<div class="clearfix"></div>
-
-						<h2 class="section-heading">Cast:</h2>
-					</div>
-
 					<div class="col-xs-3">
 						<img class="img-responsive hover-color" src="./img/gaya_logo.png" alt="untung">
 					</div>
@@ -140,11 +136,7 @@
 		<a name="history"></a>
 		<section class="content-section-a">
 			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h2 class="section-heading hover">GAYA in 10 Years</h2>
-					</div>
-				</div>
+				<h2 class="section-heading nomargin">GAYA in 10 Years:</h2>
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
 						<div id="historyCarousel" class="carousel slide" data-ride="carousel">
@@ -211,11 +203,9 @@
 		<a name="sponsors"></a>
 		<section class="content-section-b">
 			<div class="container">
+				<h2 class="section-heading">Sponsors:</h2>
 				<div class="row">
-					<div class="col-md-5 col-sm-12">
-						<hr class="section-heading-spacer">
-						<div class="clearfix"></div>
-						<h2 class="section-heading">Sponsors</h2>
+					<div class="col-xs-5">
 						<p class="lead">Hover on the images to find out more about our sponsors!</p>
 						
 						<div class="row">
@@ -233,15 +223,15 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-7 col-sm-12">
+					<div class="col-xs-7">
 						<div>
 							<div class="row">
-								<div class="col-md-6 col-md-offset-3">
+								<div class="col-xs-6 col-xs-offset-3">
 									<img id="sponsor-icon" class="img-responsive" src="./img/gaya_logo.png" alt="sponsor1">
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-10 col-md-offset-1">
+								<div class="col-xs-10 col-xs-offset-1">
 									<div id="sponsor-details" class="panel">
 										testing
 										asdf
@@ -257,20 +247,18 @@
 		</section>
 		
 		<a name="buy-tickets"></a>
-		<section class="content-section-c">
+		<section class="content-section-a">
 			<div class="container">
+				<h2 class="section-heading">Buy Tickets:</h2>
 				<div class="row">
 					<div class="col-xs-12">
-						<hr class="section-heading-spacer">
-						<div class="clearfix"></div>
 						<div class="row">
-							<div class="col-md-5 col-sm-12">
-								<h2 class="section-heading">Buy Tickets</h2>
+							<div class="col-xs-5">
 								<p class="lead">PURCHASE NAOOOO!!!</p>
 							</div>
-							<div class="col-md-7 col-sm-12">
+							<div class="col-xs-7">
 								<div class="row">
-									<div class="col-md-10 col-md-offset-1">
+									<div class="col-xs-10 col-xs-offset-1">
 										<div class="well">
 											<div class="row"><div class="col-md-3 col-sm-4 col-xs-5">Name:</div>
 											<div class="col-md-9 col-sm-8 col-xs-7"><input class="form-control"></input></p></div></div>
@@ -296,15 +284,7 @@
 		<a name="contact-us"></a>
 		<section class="content-section-d">
 			<div class="container">
-			
-				<div class="row">
-					<div class="col-md-12">
-						<hr class="section-heading-spacer">
-						<div class="clearfix"></div>
-						<h2 class="section-heading">Connect with GAYA</h2>
-					</div>
-				</div>
-				
+				<h2 class="section-heading">Contact Us:</h2>
 				<div class="row">
 					<div class="col-md-6 col-xs-12">
 						<div class="panel facebook-panel">
@@ -330,7 +310,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-6">
-					<p class="copyright text-muted small">Copyright &copy; GAYA Marketing 2016 All Rights Reserved</p>
+					<p class="small">Copyright &copy; GAYA Marketing 2016 All Rights Reserved</p>
 				</div>
 				<div class="col-xs-6" style="text-align: right;">
 					<p><a id="a-contact-us" href="javascript:">Contact Us</a></p>
@@ -338,6 +318,7 @@
 			</div>
 		</div>
     </footer>
+	<div class="footer-background"></div>
 
     <!-- jQuery -->
     <script src="./js/jquery.min.js"></script>
