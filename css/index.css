@@ -80,8 +80,8 @@ img:hover.hover-color {
 }
 
 .content-section-a {
+	padding: 130px 0 50px 0;
 	color: white;
-	padding: 70px 0;
 	background-color:rgba(0,0,0,0.7);
 }
 
@@ -90,31 +90,24 @@ img:hover.hover-color {
 }
 
 .content-section-b {
-  padding: 70px 0;
+  padding: 130px 0 50px 0;
   background-color: rgba(255,255,255,0.7);
-}
-
-.content-section-b .section-heading  {
-  margin-bottom: 30px;
-  color: black;
 }
 
 .content-section-a .well {
 	color: black;
 }
 
-.content-section-d {
-  padding: 70px 0;
-  background-color: rgba(0,0,0,0.97);
+.content-section-c {
+  padding: 80px 0 50px 0;
+  background-color:rgba(0,0,0,0.7);
   color: white;
 }
 
-.section-heading {
-  margin-bottom: 30px;
+.content-section-d {
+  padding: 130px 0 50px 0;
+  background-color: rgba(0,0,0,0.97);
   color: white;
-  font-weight: 300;
-  font-size: 30;
-  font-family: 'Vollkorn', serif;
 }
 
 .section-heading.nomargin{
@@ -144,3 +137,14 @@ img:hover.hover-color {
 		overflow-x: auto;
 	}
 }
+
+#a-contact-us {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+#a-contact-us:hover, 
+#a-contact-us.focus { color: red; text-decoration: none; }

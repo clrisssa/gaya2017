@@ -97,7 +97,6 @@
 		<section class="content-section-a">
 
 		  <div class="container">
-		    <h2 class="section-heading">Synopsis:</h2>
 			<div class="row">
 			  <div class="col-sm-6 col-xs-12">
 				<p class="lead">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
@@ -116,7 +115,6 @@
 		<a name="cast"></a>
 		<section id="cast-section" class="content-section-b">
 			<div class="container">
-				<h2 class="section-heading">Cast:</h2>
 				<div class="row">
 					<div class="col-md-3 col-xs-6">
 						<a href="#" data-toggle="modal" data-target="#modal-untung">
@@ -230,9 +228,8 @@
 		</section>
 
 		<a name="history"></a>
-		<section class="content-section-a">
+		<section class="content-section-c">
 			<div class="container">
-				<h2 class="section-heading nomargin">GAYA in 10 Years:</h2>
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
 						<div id="historyCarousel" class="carousel slide" data-ride="carousel">
@@ -299,7 +296,6 @@
 		<a id="sponsor-section" name="sponsors"></a>
 		<section class="content-section-b">
 			<div class="container">
-				<h2 class="section-heading">Sponsors:</h2>
 				<div class="row">
 					<div class="col-sm-5 col-xs-12">
 						<p class="lead">Hover on the images to find out more about our sponsors!</p>
@@ -343,7 +339,6 @@
 		<a name="buy-tickets"></a>
 		<section class="content-section-a">
 			<div class="container">
-				<h2 class="section-heading">Buy Tickets:</h2>
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="row">
@@ -378,7 +373,6 @@
 		<a name="contact-us"></a>
 		<section class="content-section-d">
 			<div class="container">
-				<h2 class="section-heading">Contact Us:</h2>
 				<div class="row">
 					<div class="col-md-6 col-xs-12">
 						<div class="panel facebook-panel">
@@ -444,7 +438,30 @@
 			animationTime: 500,             // AnimationTime let you define how long each section takes to animate
 			pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
 			updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
-			beforeMove: function(index) {},  // This option accepts a callback function. The function will be called before the page moves.
+			beforeMove: function(index) {  // This option accepts a callback function. The function will be called before the page moves.
+				$("#a-home").removeClass("focus");
+				$("#a-synopsis").removeClass("focus");
+				$("#a-cast").removeClass("focus");
+				$("#a-history").removeClass("focus");
+				$("#a-sponsors").removeClass("focus");
+				$("#a-buy-tickets").removeClass("focus");
+				$("#a-contact-us").removeClass("focus");
+				if (index==1){
+					$("#a-home").addClass("focus")
+				} else if (index==2) {
+					$("#a-synopsis").addClass("focus")
+				} else if (index==3) {
+					$("#a-cast").addClass("focus")
+				} else if (index==4) {
+					$("#a-history").addClass("focus")
+				} else if (index==5) {
+					$("#a-sponsors").addClass("focus")
+				} else if (index==6) {
+					$("#a-buy-tickets").addClass("focus")
+				} else if (index==7) {
+					$("#a-contact-us").addClass("focus")
+				}
+			},
 			afterMove: function(index) { // This option accepts a callback function. The function will be called after the page moves.
 				if (index==1){
 					document.getElementById("welcome-video").play();
