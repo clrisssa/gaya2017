@@ -145,6 +145,7 @@ img:hover.hover-color {
   text-transform: uppercase;
   color: white;
   text-shadow: 1px 1px 2px black;
+  text-decoration: none;
 }
 #a-contact-us:hover, 
 #a-contact-us.focus { color: red; text-decoration: none; }
