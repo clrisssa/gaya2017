@@ -35,11 +35,6 @@ section{
 	border-color: gray;
 }
 
-.intro {
-  background-color: rgba(0,0,0,0.97);
-  padding: 0px;
-}
-
 .container a {
   color: red;
 }
@@ -77,6 +72,11 @@ img:hover.hover-color {
 
 .button>.glyphicon {
 	text-shadow: none;
+}
+
+.intro {
+  background-color: rgba(0,0,0,0.97);
+  padding: 0px;
 }
 
 .content-section-a {
