@@ -107,8 +107,7 @@ footer {
 @media(max-width:480px) {
 	.topnav-background {
 		height: 50px;
+		background-size : 100% 50px;
 	}
-	.footer-background {
-		
-	}
+	
 }
