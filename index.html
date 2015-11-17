@@ -243,7 +243,7 @@
 							</ol>
 
 							<!-- Wrapper for slides -->
-							<div class="carousel-inner" role="listbox">
+							<div id="historyCarouselInner" class="carousel-inner" role="listbox">
 
 								<div class="item">
 									<img src="./img/gaya_logo.png" alt="2006">
@@ -523,19 +523,17 @@
 	<script src="./js/mobileswipe.js"></script>
 	<script>
 		$(document).ready(function() {
-			if(typeof window.orientation !== 'undefined'){
-				console.log('loaded mobile swipe support!');
-				var el = document.getElementById('historyCarousel');
-				swipedetect(el, function(swipedir){
-					if(swipedir=='left'){
-						$('#historyCarousel').carousel('next');
-					} else if(swipedir=='right'){
-						$('#historyCarousel').carousel('prev');
-					} else {
-						
-					}
-				});
-			}
+			console.log('loaded mobile swipe support!');
+			var el = document.getElementById('historyCarouselInner');
+			swipedetect(el, function(swipedir){
+				if(swipedir=='left'){
+					$('#historyCarousel').carousel('next');
+				} else if(swipedir=='right'){
+					$('#historyCarousel').carousel('prev');
+				} else {
+					
+				}
+			});
 		});
 	</script>
 
