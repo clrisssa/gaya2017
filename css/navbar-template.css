@@ -102,3 +102,13 @@ footer {
   bottom: 0;
   z-index: 1;
 }
+
+/*iphone screens*/
+@media(max-width:480px) {
+	.topnav-background {
+		height: 50px;
+	}
+	.footer-background {
+		
+	}
+}
