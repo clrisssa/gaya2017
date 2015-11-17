@@ -47,6 +47,15 @@ body, h1, h2, h3, h4, h5, h6{
   z-index: 1;
 }
 
+/*iphone screens*/
+@media(max-width:480px) {
+	.topnav-background {
+		height: 50px;
+		background-size : 100% 50px;
+	}
+	
+}
+
 .nav>li{
 	text-align: right;
 }
@@ -101,13 +110,4 @@ footer {
   left: 0;
   bottom: 0;
   z-index: 1;
-}
-
-/*iphone screens*/
-@media(max-width:480px) {
-	.topnav-background {
-		height: 50px;
-		background-size : 100% 50px;
-	}
-	
 }
