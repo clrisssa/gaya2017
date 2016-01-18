@@ -96,6 +96,24 @@ img:hover.hover-color {
 
 .content-section-a .well {
 	color: black;
+	padding: 15px 20px;
+}
+
+.well input {
+	height: 28px;
+	padding: 3px 12px;
+}
+.well .lead {
+	margin-bottom: 5px;
+}
+.well .lead.smaller {
+	font-size: 16px;
+}
+
+@media (max-width: 991px){ /*992-1*/
+	#buy-tickets-ticket-qty.disabled{ /* when screen is small, this section is hidden*/
+		display: none;
+	}
 }
 
 .content-section-c {
