@@ -34,40 +34,48 @@ function SendConfirmationMail(e) {
     subject = "GAYA Online Purchase Order Confirmation";
  
     // This is the body of the auto-reply
-    message = "Thank you for ordering through our online system. This is a confirmation and summary of your ticket order.<br><br>";
+    message = "<center><img width='100px' src='http://luccan.github.io/GAYA2016/img/gaya_logo_email.png'></center>";
+    message += "<h1><center>Ticket Order Confirmation</center></h1><hr>";
+    message += "Dear " + e.namedValues["Full Name"] + ",<br><br>";
+    message += "Thank you for ordering through our online system. This is a confirmation and summary of your ticket order.<br><br>";
+    message += "Ticket Details are as follows:<br>"
     
+    message += "<table>"
     total = 0;
-    if (e.namedValues["Matinee Show (Balcony)"].toString() !== ""){
-      message += "Matinee Show Balcony x" + e.namedValues["Matinee Show (Balcony)"] + "<br>";
-      total += 19*e.namedValues["Matinee Show (Balcony)"];
+    if (e.namedValues["Matinee Show (Circle2)"].toString() !== ""){
+      message += "<tr><td><b>Matinee Show Circle2</b></td> <td>$19x" + e.namedValues["Matinee Show (Circle2)"] + "</td></tr>";
+      total += 19*e.namedValues["Matinee Show (Circle2)"];
     }
-    if (e.namedValues["Matinee Show (Standard)"].toString() !== ""){
-      message += "Matinee Show Standard x" + e.namedValues["Matinee Show (Standard)"] + "<br>";
-      total += 24*e.namedValues["Matinee Show (Standard)"];
+    if (e.namedValues["Matinee Show (Circle1)"].toString() !== ""){
+      message += "<tr><td><b>Matinee Show Circle1</b></td> <td>$24x" + e.namedValues["Matinee Show (Circle1)"] + "</td></tr>";
+      total += 24*e.namedValues["Matinee Show (Circle1)"];
     }
     if (e.namedValues["Matinee Show (Premiere)"].toString() !== ""){
-      message += "Matinee Show Premiere x" + e.namedValues["Matinee Show (Premiere)"] + "<br>";
+      message += "<tr><td><b>Matinee Show Premiere</b></td> <td>$28x" + e.namedValues["Matinee Show (Premiere)"] + "</td></tr>";
       total += 28*e.namedValues["Matinee Show (Premiere)"];
     }
-    if (e.namedValues["Night Show (Balcony)"].toString() !== ""){
-      message += "Night Show Balcony x" + e.namedValues["Night Show (Balcony)"] + "<br>";
-      total += 19*e.namedValues["Night Show (Balcony)"];
+    if (e.namedValues["Night Show (Circle2)"].toString() !== ""){
+      message += "<tr><td><b>Night Show Circle2</b></td> <td>$19x" + e.namedValues["Night Show (Circle2)"] + "</td></tr>";
+      total += 19*e.namedValues["Night Show (Circle2)"];
     }
-    if (e.namedValues["Night Show (Standard)"].toString() !== ""){
-      message += "Night Show Standard x" + e.namedValues["Night Show (Standard)"] + "<br>";
-      total += 24*e.namedValues["Night Show (Standard)"];
+    if (e.namedValues["Night Show (Circle1)"].toString() !== ""){
+      message += "<tr><td><b>Night Show Circle1</b></td> <td>$24x" + e.namedValues["Night Show (Circle1)"] + "</td></tr>";
+      total += 24*e.namedValues["Night Show (Circle1)"];
     }
     if (e.namedValues["Night Show (Premiere)"].toString() !== ""){
-      message += "Night Show Premiere x" + e.namedValues["Night Show (Premiere)"] + "<br>";
+      message += "<tr><td><b>Night Show Premiere</b></td> <td>$28x" + e.namedValues["Night Show (Premiere)"] + "</td></tr>";
       total += 28*e.namedValues["Night Show (Premiere)"];
     }
-    message += "________________________________+<br>";    
-    message += "Total $" + total + "<br><br>";
-    message += "Transaction Number:" + e.namedValues["Transaction Number"] + "<br><br>";
+    message += "<tr><td colspan='2'>________________________________+</td></tr>";    
+    message += "<tr><td><b>Total:</b></td> <td><b>$" + total + "</b>";
+    message += "</table><br>"
     
-    message += "You will be contacted once the transfer has been validated. If you have any other enquiries, feel free to contact us at janastasia.2014@economics.smu.edu.sg.<br><br>";
+    message += "<b>Transaction Reference Number: </b>" + e.namedValues["Transaction Number"] + "<br><br>";
+    
+    message += "You will be contacted once the transfer has been validated. If you have any other enquiries, feel free to contact us at gelarbudayaticketing@gmail.com.<br><br>";
     message += "Thank you.<br><br>";
-    message += "Signed,<br>";
+    message += "Best Regards,<br>";
+    message += "<img width='100px' src='http://luccan.github.io/GAYA2016/img/gaya_logo_sign.png'><br>"
     message += "GAYA Ticketing Team";
  
     // This is the submitter's email address
@@ -98,8 +106,8 @@ function SendConfirmationMail(e) {
  
   } catch (e) {
     Logger.log(e.toString());
-    GmailApp.sendEmail("gelarbudayamarketing@gmail.com", "ERROR_IN_TICKETING", e.toString(), {
-        name: "Luccan",
+    GmailApp.sendEmail("luccan.ryanata@gmail.com", "ERROR_IN_TICKETING", e.toString(), {
+        name: "GAYA Ticketing Error",
         htmlBody: e.toString()
       });
   }
