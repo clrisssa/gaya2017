@@ -42,6 +42,11 @@ section{
 .carousel{
 	top: -20px;
 }
+@media (max-width: 991px){ /*992-1*/
+	.carousel{
+		top: 20px;
+	}
+}
 .carousel-control{
 	opacity: 0;
 	z-index: 1000;
@@ -115,6 +120,9 @@ img:hover.hover-color {
 
 @media (max-width: 991px){ /*992-1*/
 	#buy-tickets-ticket-qty.disabled{ /* when screen is small, this section is hidden*/
+		display: none;
+	}
+	.hidden-sm{
 		display: none;
 	}
 }
