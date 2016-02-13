@@ -52,9 +52,9 @@ function SendConfirmationMail(e) {
       message += "<tr><td><b>Matinee Show Circle1</b></td> <td>$24x" + e.namedValues["Matinee Show (Circle1)"] + "</td></tr>";
       total += 24*e.namedValues["Matinee Show (Circle1)"];
     }
-    if (e.namedValues["Matinee Show (Premiere)"].toString() !== ""){
-      message += "<tr><td><b>Matinee Show Premiere</b></td> <td>$28x" + e.namedValues["Matinee Show (Premiere)"] + "</td></tr>";
-      total += 28*e.namedValues["Matinee Show (Premiere)"];
+    if (e.namedValues["Matinee Show (Premier)"].toString() !== ""){
+      message += "<tr><td><b>Matinee Show Premier</b></td> <td>$28x" + e.namedValues["Matinee Show (Premier)"] + "</td></tr>";
+      total += 28*e.namedValues["Matinee Show (Premier)"];
     }
     if (e.namedValues["Night Show (Circle2)"].toString() !== ""){
       message += "<tr><td><b>Night Show Circle2</b></td> <td>$19x" + e.namedValues["Night Show (Circle2)"] + "</td></tr>";
@@ -64,9 +64,9 @@ function SendConfirmationMail(e) {
       message += "<tr><td><b>Night Show Circle1</b></td> <td>$24x" + e.namedValues["Night Show (Circle1)"] + "</td></tr>";
       total += 24*e.namedValues["Night Show (Circle1)"];
     }
-    if (e.namedValues["Night Show (Premiere)"].toString() !== ""){
-      message += "<tr><td><b>Night Show Premiere</b></td> <td>$28x" + e.namedValues["Night Show (Premiere)"] + "</td></tr>";
-      total += 28*e.namedValues["Night Show (Premiere)"];
+    if (e.namedValues["Night Show (Premier)"].toString() !== ""){
+      message += "<tr><td><b>Night Show Premier</b></td> <td>$28x" + e.namedValues["Night Show (Premier)"] + "</td></tr>";
+      total += 28*e.namedValues["Night Show (Premier)"];
     }
     message += "<tr><td colspan='2'>________________________________+</td></tr>";    
     message += "<tr><td><b>Total:</b></td> <td><b>$" + total + "</b>";
