@@ -36,11 +36,13 @@ function SendConfirmationMail(e) {
     // This is the body of the auto-reply
     message = "<center><img width='100px' src='http://luccan.github.io/GAYA2016/img/gaya_logo_email.png'></center>";
     message += "<h1><center>Ticket Order Confirmation</center></h1><hr>";
+    message += "<p style='font-size:125%'>";
     message += "Dear " + e.namedValues["Full Name"] + ",<br><br>";
     message += "Thank you for ordering through our online system. This is a confirmation and summary of your ticket order.<br><br>";
-    message += "Ticket Details are as follows:<br>"
+    message += "Ticket Details are as follows:<br>";
+    message += "</p>";
     
-    message += "<table>"
+    message += "<table style='font-size:125%'>";
     total = 0;
     if (e.namedValues["Matinee Show (Circle2)"].toString() !== ""){
       message += "<tr><td><b>Matinee Show Circle2</b></td> <td>$19x" + e.namedValues["Matinee Show (Circle2)"] + "</td></tr>";
@@ -68,14 +70,16 @@ function SendConfirmationMail(e) {
     }
     message += "<tr><td colspan='2'>________________________________+</td></tr>";    
     message += "<tr><td><b>Total:</b></td> <td><b>$" + total + "</b>";
-    message += "</table><br>"
+    message += "</table><br>";
     
+    message += "<p style='font-size:125%'>";
     message += "<b>Transaction Reference Number: </b>" + e.namedValues["Transaction Number"] + "<br><br>";
     
     message += "You will be contacted once the transfer has been validated. If you have any other enquiries, feel free to contact us at gelarbudayaticketing@gmail.com.<br><br>";
     message += "Thank you.<br><br>";
     message += "Best Regards,<br>";
-    message += "<img width='300px' src='http://luccan.github.io/GAYA2016/img/gaya_logo_sign.png'><br>"
+    message += "</p>";
+    message += "<img width='400px' src='http://luccan.github.io/GAYA2016/img/gaya_logo_signature.png'><br>";
  
     // This is the submitter's email address
     // Make sure you have a field called Email Address in the Google Form
