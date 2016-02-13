@@ -75,8 +75,7 @@ function SendConfirmationMail(e) {
     message += "You will be contacted once the transfer has been validated. If you have any other enquiries, feel free to contact us at gelarbudayaticketing@gmail.com.<br><br>";
     message += "Thank you.<br><br>";
     message += "Best Regards,<br>";
-    message += "<img width='100px' src='http://luccan.github.io/GAYA2016/img/gaya_logo_sign.png'><br>"
-    message += "GAYA Ticketing Team";
+    message += "<img width='300px' src='http://luccan.github.io/GAYA2016/img/gaya_logo_sign.png'><br>"
  
     // This is the submitter's email address
     // Make sure you have a field called Email Address in the Google Form
