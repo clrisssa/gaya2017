@@ -98,6 +98,12 @@ footer {
   z-index: 1030;
 }
 
+.img-footer {
+	height: 40px;
+    top: -10px;
+    position: absolute;
+}
+
 .footer-background {
   background-color: transparent;
   
