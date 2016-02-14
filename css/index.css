@@ -46,6 +46,14 @@ section{
 .carousel-control.left, .carousel-control.right{
 	background-image: none;
 }
+.left.carousel-control{
+	left: -10%;
+	opacity: 1;
+}
+.right.carousel-control{
+	right: -10%;
+	opacity: 1;
+}
 
 .carousel-caption{
 	position: relative;
