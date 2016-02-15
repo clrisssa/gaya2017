@@ -12,8 +12,10 @@
 h4.modal-title {
   font-weight: 700;
   color: rgba(0,0,0,0.5);
-  font-size: 30;
-  font-family: 'Vollkorn', serif;
+  font-size: 24px;
+  font-family: 'Bodoni MT', serif;
+  font-weight: 700;
+  font-style: italic;
  }
 .modal-backdrop { display: none; } /* remove backdrop */
 
@@ -88,7 +90,7 @@ a .img-caption {
 	text-align: center;
 	font-family: 'Bodoni MT', serif;
 	font-weight: 700;
-	text-shadow: 1px 1px 2px black;
+	text-shadow: 1px 1px 4px black;
 	font-style: italic;
 }
 .container a {
@@ -199,7 +201,7 @@ a .img-caption {
   font-size: 14px;
   text-transform: uppercase;
   color: white;
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 1px 1px 4px black;
   text-decoration: none;
 }
 #a-contact-us:hover, 
