@@ -159,7 +159,7 @@
 							<img class="img-responsive" src="./img/untung.png" alt="untung"></img>
 						</div>
 						<div class="col-md-6">
-							<p>“Anything and everything for independence!” was Untung’s persoal motto.<br/>
+							<p>“Anything and everything for independence!” was Untung’s personal motto.<br/>
 							Resentful towards the Dutch oppression and foreign powers, Untung, a natural leader, toiled and struggled to lead the nationalists to victory.</p>
 						</div>
 					</div>
@@ -323,31 +323,33 @@
 						
 						<div class="row">
 							<div class="col-xs-3">
-								<img id="sponsor1-icon" class="img-responsive hover-color sponsor" src="./img/gaya_logo.png" alt="sponsor1">
-							</div>
-							<!--div class="col-xs-3">
-								<img id="sponsor2-icon" class="img-responsive hover-color sponsor" src="./img/gaya_logo.png" alt="sponsor2">
+								<img id="sponsor1-icon" class="img-responsive hover-color sponsor" src="./img/sponsors/gaya_logo.png" alt="sponsor1">
 							</div>
 							<div class="col-xs-3">
-								<img id="sponsor3-icon"class="img-responsive hover-color sponsor" src="./img/gaya_logo.png" alt="sponsor3">
+								<img id="sponsor2-icon" class="img-responsive hover-color sponsor" src="./img/sponsors/smuki_logo.png" alt="sponsor2">
 							</div>
 							<div class="col-xs-3">
-								<img id="sponsor4-icon" class="img-responsive hover-color sponsor" src="./img/gaya_logo.png" alt="sponsor4">
-							</div-->
+								<img id="sponsor3-icon"class="img-responsive hover-color sponsor" src="./img/sponsors/smp1_logo.png" alt="sponsor3">
+							</div>
+							<div class="col-xs-3">
+								<img id="sponsor4-icon" class="img-responsive hover-color sponsor" src="./img/sponsors/sekolahsg_logo.png" alt="sponsor4">
+							</div>
+							<div class="col-xs-3">
+								<img id="sponsor5-icon" class="img-responsive hover-color sponsor" src="./img/sponsors/diaspora_logo.png" alt="sponsor5">
+							</div>
 						</div>
 					</div>
 					<div class="col-md-7 col-sm-12">
 						<div>
 							<div class="row">
 								<div class="col-xs-6 col-xs-offset-3">
-									<img id="sponsor-icon" class="img-responsive" src="./img/gaya_logo.png" alt="sponsor1">
+									<img id="sponsor-icon" class="img-responsive" src="./img/sponsors/gaya_logo.png" alt="sponsor1"> <!-- this is default image -->
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-xs-10 col-xs-offset-1">
 									<div id="sponsor-details" class="panel">
-										???
-										<!-- Insert default content here -->
+										<!-- this is default content -->
 									</div>
 								</div>
 							</div>
@@ -570,7 +572,7 @@
 		
 		//mouseover sponsor event
 		var default_content = "We are finalizing our list of sponsors. Please check again at a later date!";
-		var default_icon = "./img/gaya_logo.png";
+		var default_icon = "./img/sponsors/gaya_logo.png";
 		$(".sponsor").hover(
 			function() { //mouseover
 				var src = $(this).attr("src");
@@ -580,11 +582,13 @@
 				if ($(this).attr("id")=="sponsor1-icon"){
 					content = "GAYA (Gelar Budaya) is an annual production by SMUKI (Singapore Management University Komunitas Indonesia) to showcase the rich and multi-faceted culture of Indonesia.";
 				} else if ($(this).attr("id")=="sponsor2-icon"){
-					content = "At vero 2 eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.";
+					content = "SMU Komunitas Indonesia, or better known as SMUKI, prides itself in showcasing the vibrant Indonesian cultures among the Singapore Management University (SMU) community. <br/><br/>SMUKI aspires to promote Indonesian arts & culture both inside and outside of SMU community to bring Indonesia closer to their hearts as well as fostering a close relationship with the Indonesian community in Singapore through showcasing our diverse traditional dances, music and other cultural items.";
 				} else if ($(this).attr("id")=="sponsor3-icon"){
-					content = "At vero 3 eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.";
+					content = "Pt. Sinar Makmur Printing";
 				} else if ($(this).attr("id")=="sponsor4-icon"){
-					content = "At vero 4 eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.";
+					content = "Sekolah SG";
+				} else if ($(this).attr("id")=="sponsor5-icon"){
+					content = "HeyDiaspora Online Magazine is a bilingual magazine updated virtually filled with our lives, our hopes, our opinions and our thoughts. <br/><br/>We are the official media of Indonesian Students' Association in Singapore (PPIS).";
 				}
 				$("#sponsor-details").html(content);
 			},
