@@ -322,20 +322,48 @@
 						<p class="lead">Hover on the images to find out more about our sponsors!</p>
 						
 						<div class="row">
-							<div class="col-xs-3">
-								<img id="sponsor1-icon" class="img-responsive hover-color sponsor" src="./img/sponsors/gaya_logo.png" alt="sponsor1">
+							<!--div id="sponsor1-icon" class="col-xs-3 sponsor">
+								<img class="img-responsive hover-color" src="./img/sponsors/gaya_logo.png" alt="sponsor1">
+							</div-->
+							<div id="sponsor2-icon" class="col-xs-3 sponsor">
+								<img class="img-responsive hover-color" src="./img/sponsors/smuki_logo.png" alt="sponsor2">
 							</div>
-							<div class="col-xs-3">
-								<img id="sponsor2-icon" class="img-responsive hover-color sponsor" src="./img/sponsors/smuki_logo.png" alt="sponsor2">
+							<div id="sponsor3-icon" class="col-xs-3 sponsor">
+								<img class="img-responsive hover-color" src="./img/sponsors/smp1_logo.png" alt="sponsor3">
 							</div>
-							<div class="col-xs-3">
-								<img id="sponsor3-icon"class="img-responsive hover-color sponsor" src="./img/sponsors/smp1_logo.png" alt="sponsor3">
+							<div id="sponsor4-icon" class="col-xs-3 sponsor">
+								<img class="img-responsive hover-color" src="./img/sponsors/sekolahsg_logo.png" alt="sponsor4">
 							</div>
-							<div class="col-xs-3">
-								<img id="sponsor4-icon" class="img-responsive hover-color sponsor" src="./img/sponsors/sekolahsg_logo.png" alt="sponsor4">
+							<div id="sponsor5-icon" class="col-xs-3 sponsor">
+								<img class="img-responsive hover-color" src="./img/sponsors/diaspora_logo.png" alt="sponsor5">
 							</div>
-							<div class="col-xs-3">
-								<img id="sponsor5-icon" class="img-responsive hover-color sponsor" src="./img/sponsors/diaspora_logo.png" alt="sponsor5">
+						</div>
+						<div class="row">
+							<div id="sponsor6-icon" class="col-xs-3 sponsor">
+								<img class="img-responsive hover-color" src="./img/sponsors/garuda_logo.png" alt="sponsor6">
+							</div>
+							<div id="sponsor7-icon" class="col-xs-3 sponsor">
+								<img class="img-responsive hover-color" src="./img/sponsors/jura_logo.png" alt="sponsor7">
+							</div>
+							<div id="sponsor8-icon" class="col-xs-3 sponsor">
+								<img class="img-responsive hover-color" src="./img/sponsors/kbri_logo.png" alt="sponsor8">
+							</div>
+							<div id="sponsor9-icon" class="col-xs-3 sponsor">
+								<img class="img-responsive hover-color" src="./img/sponsors/kemdikbud_logo.png" alt="sponsor9">
+							</div>
+						</div>
+						<div class="row">
+							<div id="sponsor10-icon" class="col-xs-3 sponsor">
+								<img class="img-responsive hover-color" src="./img/sponsors/kinerjabisa_logo.png" alt="sponsor10">
+							</div>
+							<div id="sponsor11-icon" class="col-xs-3 sponsor">
+								<img class="img-responsive hover-color" src="./img/sponsors/oneacademy_logo.png" alt="sponsor11">
+							</div>
+							<div id="sponsor12-icon" class="col-xs-3 sponsor">
+								<img class="img-responsive hover-color" src="./img/sponsors/rumahbudaya_logo.png" alt="sponsor12">
+							</div>
+							<div id="sponsor13-icon" class="col-xs-3 sponsor">
+								<img class="img-responsive hover-color" src="./img/sponsors/wings_logo.png" alt="sponsor13">
 							</div>
 						</div>
 					</div>
@@ -348,7 +376,7 @@
 							</div>
 							<div class="row">
 								<div class="col-xs-10 col-xs-offset-1">
-									<div id="sponsor-details" class="panel">
+									<div id="sponsor-details">
 										<!-- this is default content -->
 									</div>
 								</div>
@@ -385,8 +413,8 @@
 											<div class="row"><div class="col-xs-12"><p class="lead" style="font-size:120%;font-weight:bold;">Night (7.30PM)</p></div></div>
 											<div class="row"><div class="col-md-4 col-sm-5 col-xs-offset-1"><p class="lead smaller">Circle 2 ($19):</p></div>
 											<div class="col-md-7 col-sm-6"><input id="buy-tickets-n-1" type="number" class="form-control" min="0"></input></p></div></div>
-											<div class="row"><div class="col-md-4 col-sm-5 col-xs-offset-1"><p class="lead smaller">Circle 1 ($24):</p></div>
-											<div class="col-md-7 col-sm-6">Sold Out!<input id="buy-tickets-n-2" style="display:none;" type="number" class="form-control" min="0"></input></p></div></div>
+											<div class="row"><div class="col-md-4 col-sm-5 col-xs-offset-1"><p style="    text-decoration: line-through;" class="lead smaller">Circle 1 ($24):</p></div>
+											<div class="col-md-7 col-sm-6"><p style="text-align:center;">Sold Out!</p><input id="buy-tickets-n-2" style="display:none;" type="number" class="form-control" min="0"></input></p></div></div>
 											<div class="row"><div class="col-md-4 col-sm-5 col-xs-offset-1"><p class="lead smaller">Premier ($28):</p></div>
 											<div class="col-md-7 col-sm-6"><input id="buy-tickets-n-3" type="number" class="form-control" min="0"></input></p></div></div>
 											<div class=row><div class="col-md-7 col-md-offset-5 col-sm-6 col-sm-offset-6 col-xs-6 col-xs-offset-6">
@@ -571,28 +599,45 @@
 		$(".modal-body").css("max-height",$("#cast-section").height()-58);
 		
 		//mouseover sponsor event
-		var default_content = "We are finalizing our list of sponsors. Please check again at a later date!";
+		var default_content = "Hover on the images to find out more about our sponsors!";
 		var default_icon = "./img/sponsors/gaya_logo.png";
 		$(".sponsor").hover(
 			function() { //mouseover
-				var src = $(this).attr("src");
+				var src = $(this).find('img').first().attr("src");
 				//console.log(src);
 				$("#sponsor-icon").attr("src", src);
 				var content = default_content;
 				if ($(this).attr("id")=="sponsor1-icon"){
-					content = "GAYA (Gelar Budaya) is an annual production by SMUKI (Singapore Management University Komunitas Indonesia) to showcase the rich and multi-faceted culture of Indonesia.";
+					content = "Gelar Budaya";
 				} else if ($(this).attr("id")=="sponsor2-icon"){
-					content = "SMU Komunitas Indonesia, or better known as SMUKI, prides itself in showcasing the vibrant Indonesian cultures among the Singapore Management University (SMU) community. <br/><br/>SMUKI aspires to promote Indonesian arts & culture both inside and outside of SMU community to bring Indonesia closer to their hearts as well as fostering a close relationship with the Indonesian community in Singapore through showcasing our diverse traditional dances, music and other cultural items.";
+					content = "SMU Komunitas Indonesia";
 				} else if ($(this).attr("id")=="sponsor3-icon"){
 					content = "Pt. Sinar Makmur Printing";
 				} else if ($(this).attr("id")=="sponsor4-icon"){
 					content = "Sekolah SG";
 				} else if ($(this).attr("id")=="sponsor5-icon"){
-					content = "HeyDiaspora Online Magazine is a bilingual magazine updated virtually filled with our lives, our hopes, our opinions and our thoughts. <br/><br/>We are the official media of Indonesian Students' Association in Singapore (PPIS).";
+					content = "HeyDiaspora Online Magazine";
+				} else if ($(this).attr("id")=="sponsor6-icon"){
+					content = "Garuda Indonesia";
+				} else if ($(this).attr("id")=="sponsor7-icon"){
+					content = "JURA Indonesia";
+				} else if ($(this).attr("id")=="sponsor8-icon"){
+					content = "Embassy of the Republic of Indonesia Singapore";
+				} else if ($(this).attr("id")=="sponsor9-icon"){
+					content = "Ministry of Education and Culture Republic of Indonesia";
+				} else if ($(this).attr("id")=="sponsor10-icon"){
+					content = "Kinerja Bisa";
+				} else if ($(this).attr("id")=="sponsor11-icon"){
+					content = "One Academy";
+				} else if ($(this).attr("id")=="sponsor12-icon"){
+					content = "Rumah Budaya Indonesia Singapura";
+				} else if ($(this).attr("id")=="sponsor13-icon"){
+					content = "Wings Food";
 				}
-				$("#sponsor-details").html(content);
+				$("#sponsor-details").html('"' + content + '"');
 			},
 			function() { //mouseout
+				//console.log('mouse_out');
 				$("#sponsor-icon").attr("src", default_icon);
 				$("#sponsor-details").html(default_content);
 			}

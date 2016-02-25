@@ -81,7 +81,7 @@ img.hover-color {
 }
 
 /* Disable grayscale on hover */
-img:hover.hover-color {
+div:hover>img.hover-color, div:hover>a>img.hover-color{
   filter: none;
   -webkit-filter: grayscale(0);
 }
@@ -174,11 +174,16 @@ a .img-caption {
 }
 
 /* Sponsors page */
-#sponsor-details.panel{
+#sponsor-details{
 	padding: 15px;
-	background-color: rgba(255,255,255,0.9);
-	border-color: black;
+	/*background-color: rgba(255,255,255,0.9);
+	border-color: black;*/
 	overflow-y: auto;
+	text-align:center;
+	font-size: 32px;
+	font-style: italic;
+	font-weight: 700;
+	font-family: 'Bodoni MT', serif;
 }
 
 .panel.facebook-panel {
