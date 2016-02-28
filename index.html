@@ -380,12 +380,7 @@
 										<!-- this is default content -->
 									</div>
 									<div id="sponsor-details2">
-										<div id="sponsor-details-static" style="display:none;">
-											<!-- this element replaces marquee when the text is not too long -->
-										</div>
-										<marquee id="sponsor-details-marquee" scrolldelay="0" scrollamount="3" behavior="scroll" direction="up" onmousedown="this.stop();" onmouseup="this.start();">
-											<!-- this is default content -->
-										</marquee>
+										<!-- this is default content -->
 									</div>
 								</div>
 							</div>
@@ -606,28 +601,13 @@
 		//set modal max height (-58 for title header)
 		$(".modal-body").css("max-height",$("#cast-section").height()-58);
 		
-		var mouseclick_semaphore = true;
-		function readjust_marquee_height(){
-			var marquee_offset_top = $('#sponsor-details-marquee').offset().top - $('#sponsor-section').offset().top;
+		function readjust_details2_height(){
+			var marquee_offset_top = $('#sponsor-details2').offset().top - $('#sponsor-section').offset().top;
 			var page_height = $("#sponsor-section").height()+158; //plus header height
-			$("#sponsor-details-marquee").height(page_height-marquee_offset_top);
+			$("#sponsor-details2").height(page_height-marquee_offset_top);
 			/*console.log(marquee_offset_top);
 			console.log(page_height);
 			console.log(page_height-marquee_offset_top);*/
-			
-			//decide whether credits roll or not (show marquee or static?)
-			var element = $('#sponsor-details-marquee')[0];
-			if (element.scrollHeight != element.clientHeight){
-				$('#sponsor-details-marquee').removeClass('marquee-hidden'); //credits roll
-				$('#sponsor-details-static').hide();
-				//console.log(element.scrollHeight);
-				//console.log(element.clientHeight);
-			} else {
-				$("#sponsor-details-static").html($("#sponsor-details-marquee").html());
-				$('#sponsor-details-static').show(); //static
-				$('#sponsor-details-marquee').addClass('marquee-hidden');
-			}
-			mouseclick_semaphore = true; //release lock
 		}
 		
 		//mouseover sponsor event - changed to click
@@ -636,8 +616,6 @@
 		var default_icon = "./img/sponsors/gaya_logo.png";
 		$("div.sponsor").click(
 			function() { //mouseover
-				if (!mouseclick_semaphore){console.log('busy');return;}
-				mouseclick_semaphore = false;
 				var src = $(this).find('img').first().attr("src");
 				//console.log(src);
 				$("#sponsor-icon").attr("src", src);
@@ -679,8 +657,8 @@
 					details = "What is today a major corporation that exports its products around the world began life over 60 years ago in East Java. Over the years, Wings has grown to become one of Indonesia's well-known brands. <br/>The company's first products were soap and detergent, which proved a hit with customers. <br/>Soon other cleaning products were introduced and distribution channels were established across Indonesia. The next few decades saw Wings steadily expand its product lines and now produces and sell hundreds of SKUs of household, personal care and food products. <br/>Today, Wings is recognized as a leading local manufacturer and distributor of household and personal care products. Blending local knowledge and advanced manufacturing technologies, Wings is still dedicated to company's vision of providing quality products at affordable prices.";
 				}
 				$("#sponsor-details").html(content);
-				$("#sponsor-details-marquee").html(details);
-				readjust_marquee_height();
+				$("#sponsor-details2").html(details);
+				readjust_details2_height();
 			}/*,
 			function() { //mouseout
 				console.log('mouse_out');
@@ -693,13 +671,8 @@
 			}*/
 		);
 		$("#sponsor-details").html(default_content);
-		$("#sponsor-details-marquee").html(default_details);
-		readjust_marquee_height();
-		/*$("#sponsor-details").html(default_content).promise().done(function(){
-			$("#sponsor-details-marquee").html(default_details).promise().done(function(){
-				readjust_marquee_height();
-			});
-		});*/
+		$("#sponsor-details2").html(default_details);
+		readjust_details2_height();
 		
 		//buy-tickets workflow
 		$("#buy-tickets-submit-qty").click(function(e){
