@@ -617,7 +617,7 @@
 			
 			//decide whether credits roll or not (show marquee or static?)
 			var element = $('#sponsor-details-marquee')[0];
-			if (element.scrollHeight > element.clientHeight){
+			if (element.scrollHeight != element.clientHeight){
 				$('#sponsor-details-marquee').removeClass('marquee-hidden'); //credits roll
 				$('#sponsor-details-static').hide();
 				//console.log(element.scrollHeight);
