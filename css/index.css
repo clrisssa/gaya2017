@@ -4,6 +4,10 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+.marquee-hidden{
+	visibility:hidden;
+}
+
 /* overflows is to allow background to move and to prevent modal from making scrollbar disappear */
 .modal { position: absolute; margin-top: 50px; }
 .modal-open .modal { overflow: hidden; }
@@ -175,8 +179,8 @@ a .img-caption {
 
 /* Sponsors page */
 #sponsor-details{
-	padding: 15px;
-	/*background-color: rgba(255,255,255,0.9);
+	/*padding: 15px;
+	background-color: rgba(255,255,255,0.9);
 	border-color: black;*/
 	overflow-y: auto;
 	text-align:center;
@@ -184,6 +188,16 @@ a .img-caption {
 	font-style: italic;
 	font-weight: 700;
 	font-family: 'Bodoni MT', serif;
+}
+#sponsor-details2{
+	/*padding: 15px;*/
+	overflow-y: auto;
+	font-size: 16px;
+	font-weight: 700;
+	font-family: 'Bodoni MT', serif;
+}
+#sponsor-details-marquee, #sponsor-details-static{
+	text-align:center;
 }
 
 .panel.facebook-panel {
