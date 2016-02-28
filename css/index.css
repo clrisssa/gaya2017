@@ -192,12 +192,12 @@ a .img-caption {
 #sponsor-details2{
 	/*padding: 15px;*/
 	overflow-y: auto;
-	font-size: 16px;
-	font-weight: 700;
-	font-family: 'Bodoni MT', serif;
 }
 #sponsor-details-marquee, #sponsor-details-static{
 	text-align:center;
+	font-size: 16px;
+	font-weight: 700;
+	font-family: 'Bodoni MT', serif;
 }
 
 .panel.facebook-panel {
