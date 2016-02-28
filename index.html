@@ -674,6 +674,9 @@
 		$("#sponsor-details2").html(default_details);
 		readjust_details2_height();
 		
+		//fix page
+		$(document).unbind('mousewheel');
+		
 		//buy-tickets workflow
 		$("#buy-tickets-submit-qty").click(function(e){
 			var total = 0;
