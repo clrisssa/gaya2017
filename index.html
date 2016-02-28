@@ -678,11 +678,9 @@
 					content = "Wings Corporation";
 					details = "What is today a major corporation that exports its products around the world began life over 60 years ago in East Java. Over the years, Wings has grown to become one of Indonesia's well-known brands. <br/>The company's first products were soap and detergent, which proved a hit with customers. <br/>Soon other cleaning products were introduced and distribution channels were established across Indonesia. The next few decades saw Wings steadily expand its product lines and now produces and sell hundreds of SKUs of household, personal care and food products. <br/>Today, Wings is recognized as a leading local manufacturer and distributor of household and personal care products. Blending local knowledge and advanced manufacturing technologies, Wings is still dedicated to company's vision of providing quality products at affordable prices.";
 				}
-				$("#sponsor-details").html(content).promise().done(function(){
-					$("#sponsor-details-marquee").html(details).promise().done(function(){
-						readjust_marquee_height();
-					});
-				});
+				$("#sponsor-details").html(content);
+				$("#sponsor-details-marquee").html(details);
+				readjust_marquee_height();
 			}/*,
 			function() { //mouseout
 				console.log('mouse_out');
@@ -694,11 +692,14 @@
 				});
 			}*/
 		);
-		$("#sponsor-details").html(default_content).promise().done(function(){
+		$("#sponsor-details").html(default_content);
+		$("#sponsor-details-marquee").html(default_details);
+		readjust_marquee_height();
+		/*$("#sponsor-details").html(default_content).promise().done(function(){
 			$("#sponsor-details-marquee").html(default_details).promise().done(function(){
 				readjust_marquee_height();
 			});
-		});
+		});*/
 		
 		//buy-tickets workflow
 		$("#buy-tickets-submit-qty").click(function(e){
