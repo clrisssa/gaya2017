@@ -319,7 +319,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-5 col-sm-12">
-						<p class="lead">Hover on the images to find out more about our sponsors!</p>
+						<p class="lead">Click on the images to find out more about our sponsors!</p>
 						
 						<div class="row">
 							<!--div id="sponsor1-icon" class="col-xs-3 sponsor">
@@ -383,7 +383,7 @@
 										<div id="sponsor-details-static" style="display:none;">
 											<!-- this element replaces marquee when the text is not too long -->
 										</div>
-										<marquee id="sponsor-details-marquee" scrolldelay="0" scrollamount="3" behavior="scroll" direction="up">
+										<marquee id="sponsor-details-marquee" scrolldelay="0" scrollamount="3" behavior="scroll" direction="up" onmousedown="this.stop();" onmouseup="this.start();">
 											<!-- this is default content -->
 										</marquee>
 									</div>
@@ -606,6 +606,7 @@
 		//set modal max height (-58 for title header)
 		$(".modal-body").css("max-height",$("#cast-section").height()-58);
 		
+		var mouseclick_semaphore = true;
 		function readjust_marquee_height(){
 			var marquee_offset_top = $('#sponsor-details-marquee').offset().top - $('#sponsor-section').offset().top;
 			var page_height = $("#sponsor-section").height()+158; //plus header height
@@ -626,14 +627,17 @@
 				$('#sponsor-details-static').show(); //static
 				$('#sponsor-details-marquee').addClass('marquee-hidden');
 			}
+			mouseclick_semaphore = true; //release lock
 		}
 		
-		//mouseover sponsor event
-		var default_content = "Hover on the images to find out more about our sponsors!";
+		//mouseover sponsor event - changed to click
+		var default_content = "Click on the images to find out more about our sponsors!";
 		var default_details = "";
 		var default_icon = "./img/sponsors/gaya_logo.png";
-		$(".sponsor").hover(
+		$("div.sponsor").click(
 			function() { //mouseover
+				if (!mouseclick_semaphore){console.log('busy');return;}
+				mouseclick_semaphore = false;
 				var src = $(this).find('img').first().attr("src");
 				//console.log(src);
 				$("#sponsor-icon").attr("src", src);
@@ -655,7 +659,7 @@
 					details = "HeyDiaspora Online Magazine is a bilingual magazine, updated virtually, filled with our lives, our hopes, our opinions and our thoughts. <br/>We are the official media of Indonesian Students’ Association in Singapore (PPIS). <br/>This is the place where any Indonesian can show their ability to become a writer or a photographer!";
 				} else if ($(this).attr("id")=="sponsor6-icon"){
 					content = "Garuda Indonesia";
-					details = 'less than five years old, Garuda Indonesia proudly serves its passengers with the award-winning "Garuda Indonesia Experience" service, which highlights Indonesia’s warm hospitality and rich diverse culture. <br/><br/>The airline continuously strives, through its ongoing transformation program, to provide better and more convenient services with one of the youngest fleets in the sky. The progress of Garuda Indonesia’s transformation program can be seen from achieving a Skytrax’s 5-star airline rating, ranked as the 7th best airline in the world in the 2014, as well as winning the prestigious “The World’s Best Cabin Crew” award in 2014 and “The World’s Best Economy Class” award in 2013, also from Skytrax. Garuda Indonesia is a member of SkyTeam, the global airline alliance with 20 members, providing access to an extensive global network with over 16.320 daily flights to 1,052 destinations in 177 countries. <br/><br/>Garuda Indonesia is currently a frequency leader for Singapore – Jakarta by serving the route with 10 flights daily. In addition, The 5 – Star Airline also flies twice daily flights to Bali, once daily flight to Surabaya and twice weekly one-way non-stop direct flight to Amsterdam. <br/><br/>As part of the airline\'s efforts to further strengthen its international network, especially in Europe, Garuda Indonesia will be flying one way non-stop direct flight from Singapore to London Heathrow starting from March 31, onwards. The Indonesian flag carrier will increase its service frequency to five times per week, departing every other day except on Mondays and Fridays.';
+					details = 'Less than five years old, Garuda Indonesia proudly serves its passengers with the award-winning "Garuda Indonesia Experience" service, which highlights Indonesia’s warm hospitality and rich diverse culture. <br/><br/>The airline continuously strives, through its ongoing transformation program, to provide better and more convenient services with one of the youngest fleets in the sky. The progress of Garuda Indonesia’s transformation program can be seen from achieving a Skytrax’s 5-star airline rating, ranked as the 7th best airline in the world in the 2014, as well as winning the prestigious “The World’s Best Cabin Crew” award in 2014 and “The World’s Best Economy Class” award in 2013, also from Skytrax. Garuda Indonesia is a member of SkyTeam, the global airline alliance with 20 members, providing access to an extensive global network with over 16.320 daily flights to 1,052 destinations in 177 countries. <br/><br/>Garuda Indonesia is currently a frequency leader for Singapore – Jakarta by serving the route with 10 flights daily. In addition, The 5 – Star Airline also flies twice daily flights to Bali, once daily flight to Surabaya and twice weekly one-way non-stop direct flight to Amsterdam. <br/><br/>As part of the airline\'s efforts to further strengthen its international network, especially in Europe, Garuda Indonesia will be flying one way non-stop direct flight from Singapore to London Heathrow starting from March 31, onwards. The Indonesian flag carrier will increase its service frequency to five times per week, departing every other day except on Mondays and Fridays.';
 				} else if ($(this).attr("id")=="sponsor7-icon"){
 					content = "JURA Indonesia";
 				} else if ($(this).attr("id")=="sponsor8-icon"){
@@ -674,22 +678,28 @@
 					content = "Wings Corporation";
 					details = "What is today a major corporation that exports its products around the world began life over 60 years ago in East Java. Over the years, Wings has grown to become one of Indonesia's well-known brands. <br/>The company's first products were soap and detergent, which proved a hit with customers. <br/>Soon other cleaning products were introduced and distribution channels were established across Indonesia. The next few decades saw Wings steadily expand its product lines and now produces and sell hundreds of SKUs of household, personal care and food products. <br/>Today, Wings is recognized as a leading local manufacturer and distributor of household and personal care products. Blending local knowledge and advanced manufacturing technologies, Wings is still dedicated to company's vision of providing quality products at affordable prices.";
 				}
-				$("#sponsor-details").html(content);
-				$("#sponsor-details-marquee").html(details);
-				readjust_marquee_height();
-			},
+				$("#sponsor-details").html(content).promise().done(function(){
+					$("#sponsor-details-marquee").html(details).promise().done(function(){
+						readjust_marquee_height();
+					});
+				});
+			}/*,
 			function() { //mouseout
-				//console.log('mouse_out');
+				console.log('mouse_out');
 				$("#sponsor-icon").attr("src", default_icon);
-				$("#sponsor-details").html(default_content);
-				$("#sponsor-details-marquee").html(default_details);
-				readjust_marquee_height();
-			}
+				$("#sponsor-details").html(default_content).promise().done(function(){
+					$("#sponsor-details-marquee").html(default_details).promise().done(function(){
+						readjust_marquee_height();
+					});
+				});
+			}*/
 		);
-		$("#sponsor-details").html(default_content);
-		$("#sponsor-details-marquee").html(default_details);
-		readjust_marquee_height();
-
+		$("#sponsor-details").html(default_content).promise().done(function(){
+			$("#sponsor-details-marquee").html(default_details).promise().done(function(){
+				readjust_marquee_height();
+			});
+		});
+		
 		//buy-tickets workflow
 		$("#buy-tickets-submit-qty").click(function(e){
 			var total = 0;
