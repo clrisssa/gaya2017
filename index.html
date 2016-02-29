@@ -78,17 +78,22 @@
 		<!-- Header -->
 		<a name="home"></a>
 		<section id="video-section" class="intro">
-			<div class="fadescreen"></div>
-			<div class="row">
+			<div id="youtube-container" class="row">
 				<div class="col-xs-12">
-					<video id="welcome-video" style="width: 100%; height: auto;" autoplay loop>
-						<!-- <source src="video/trailer.webm" type="video/webm"> -->
-						<source src="video/intro.mov" style="background:url('./img/gaya_logo_white.png');">
+					<div id="fadescreen-section" class="fadescreen-container" style="position:absolute;">
+						<div class="row fadescreen-container"><div class="col-xs-12 fadescreen-container">
+							<div class="fadescreen"></div>
+						</div></div>
+					</div>
+					<iframe id="welcome-video" style="width: 100%; height: auto;" src="http://www.youtube.com/embed/OBwhEwBo91Y?autoplay=1&loop=1&playlist=OBwhEwBo91Y&enablejsapi=1&version=3&playerapiid=ytplayer" allowscriptaccess="always">
+					</iframe>
+					<!--video id="welcome-video" style="width: 100%; height: auto;" autoplay loop>
+						<source src="http://youtube.com/watch?v=OBwhEwBo91Y" style="background:url('./img/gaya_logo_white.png');">
 						Your browser does not support the video.
 						Please access via laptop or desktop PC to fully enjoy the experience of our website.
 						<!-- when video does not load, load logo -->
 						<!--img class="img-responsive" src="./img/gaya_logo_white.png" alt="untung"-->
-					</video>
+					<!--/video-->
 				</div>
 			</div>
 		</section>
@@ -326,8 +331,11 @@
 							<!--div id="sponsor1-icon" class="col-xs-3 sponsor">
 								<img class="img-responsive hover-color" src="./img/sponsors/gaya_logo.png" alt="sponsor1">
 							</div-->
-							<div id="sponsor2-icon" class="col-xs-3 sponsor">
+							<!--div id="sponsor2-icon" class="col-xs-3 sponsor">
 								<img class="img-responsive hover-color" src="./img/sponsors/smuki_logo.png" alt="sponsor2">
+							</div-->
+							<div id="sponsor13-icon" class="col-xs-3 sponsor">
+								<img class="img-responsive hover-color" src="./img/sponsors/wings_logo.png" alt="sponsor13">
 							</div>
 							<div id="sponsor3-icon" class="col-xs-3 sponsor">
 								<img class="img-responsive hover-color" src="./img/sponsors/smp1_logo.png" alt="sponsor3">
@@ -362,9 +370,6 @@
 							</div>
 							<div id="sponsor12-icon" class="col-xs-3 sponsor">
 								<img class="img-responsive hover-color" src="./img/sponsors/rumahbudaya_logo.png" alt="sponsor12">
-							</div>
-							<div id="sponsor13-icon" class="col-xs-3 sponsor">
-								<img class="img-responsive hover-color" src="./img/sponsors/wings_logo.png" alt="sponsor13">
 							</div>
 						</div>
 					</div>
@@ -574,9 +579,11 @@
 			},
 			afterMove: function(index) { // This option accepts a callback function. The function will be called after the page moves.
 				if (index==1){
-					document.getElementById("welcome-video").play();
+					//document.getElementById("welcome-video").play();
+					document.getElementById("welcome-video").contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');  
 				} else {
-					document.getElementById("welcome-video").pause();
+					//document.getElementById("welcome-video").pause();
+					document.getElementById("welcome-video").contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');  
 				}
 			},   
 			loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
