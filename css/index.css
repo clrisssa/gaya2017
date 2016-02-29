@@ -8,6 +8,18 @@
 	visibility:hidden;
 }
 
+.fadescreen{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: transparent; /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(transparent, rgba(0,0,0,0.4), rgba(0,0,0,0.8), black, black); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(transparent, rgba(0,0,0,0.4), rgba(0,0,0,0.8), black, black); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(transparent, rgba(0,0,0,0.4), rgba(0,0,0,0.8), black, black); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(transparent, transparent, rgba(0,0,0,0.2) ,rgba(0,0,0,0.5), rgba(0,0,0,0.8), black, black, black, black); /* Standard syntax */
+  z-index: 1;
+}
+
 /* overflows is to allow background to move and to prevent modal from making scrollbar disappear */
 .modal { position: absolute; margin-top: 50px; }
 .modal-open .modal { overflow: hidden; }
