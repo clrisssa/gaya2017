@@ -82,6 +82,7 @@ section{
 	right: auto;
 }
 
+
 .carousel-border{
 	border-style: ridge;
     border-color: silver gray dimgray gray;
@@ -99,6 +100,14 @@ img.hover-color {
   -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
 }
 
+.cover-image {
+  background-color: black;
+  background-image: url("../img/kisar-gold.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  background-position: center;
+}
 /* Disable grayscale on hover */
 div:hover>img.hover-color, div:hover>a>img.hover-color{
   filter: none;
